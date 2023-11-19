@@ -4,41 +4,48 @@
     description = "drembryo";
     extraGroups = [ "networkmanager" "wheel" "kvm"];
     packages = with pkgs; [
+      # terminal
       alacritty
-      firefox
-      discord
-      firefox
       kitty
-      swww
+      # browser 
+      firefox
+      # ds
+      discord
+      # app louncher
       rofi-wayland
+      # utils
+      curl
+      zip
+      killall
       flameshot
       mako
-      firefox
-      discord
-      curl
       bashmount
-      xfce.thunar
-      networkmanagerapplet
-      catppuccin-papirus-folders
       neofetch
-      ranger
-      feh
-      waybar
-      cmus
-      hyprpaper
-      zip
+      unzip
+      shellcheck
+      multimarkdown
       ripgrep
       fd
-      unzip
-      cava
-      git
+      # file explorer
+      xfce.thunar
+      catppuccin-papirus-folders
+      ranger
+      feh
+      # task bar
+      waybar
+      networkmanagerapplet
+      cmus
+      # wallpaper
+      hyprpaper
+      swww
+      # media
       pavucontrol
-      multimarkdown
-      shellcheck
+      spotify
+      cava
       vlc
       ffmpeg
-      spotify
-      killall
+      # code 
+      git
       vscode
     ];
   };
