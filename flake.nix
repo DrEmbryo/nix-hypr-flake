@@ -19,12 +19,12 @@
       ${user} = lib.nixosSystem {
         inherit system;
         modules = [ 
-         ./configuration.nix
-	 hyprland.nixosModules.default
-	 {
-           programs.hyprland.enable = true;
-	   programs.hyprland.enableNvidiaPatches = true;
-           programs.hyprland.xwayland.enable = true;
+         ./modules/configuration.nix
+	      hyprland.nixosModules.default
+	      {
+          programs.hyprland.enable = true;
+          programs.hyprland.enableNvidiaPatches = true;
+          programs.hyprland.xwayland.enable = true;
          } 
         ];
       };
