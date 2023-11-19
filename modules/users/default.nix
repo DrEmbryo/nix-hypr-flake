@@ -44,6 +44,10 @@
       cava
       vlc
       ffmpeg
+      # notifications
+      dbus
+      libnotify
+      xdg-utils
       # code 
       git
       vscode
