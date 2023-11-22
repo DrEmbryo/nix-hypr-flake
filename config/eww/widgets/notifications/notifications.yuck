@@ -1,0 +1,11 @@
+(deflisten messages :initial "(box :orientation 'vertical' )"
+`python ~/.config/eww/widgets/notifications/main.py`)
+
+(defwindow notifications
+  :monitor 0
+  :geometry ( geometry :x "20px" :y "20px" :anchor "bottom right")
+  :stacking "overlay"
+  (box :orientation "vertical"
+  (literal :content messages)
+  )
+)

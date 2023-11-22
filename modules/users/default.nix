@@ -18,7 +18,6 @@
       zip
       killall
       flameshot
-      mako
       bashmount
       neofetch
       unzip
@@ -37,17 +36,14 @@
       cmus
       # wallpaper
       hyprpaper
-      swww
+      # widgets
+      eww-wayland
       # media
       pavucontrol
       spotify
       cava
       vlc
       ffmpeg
-      # notifications
-      dbus
-      libnotify
-      xdg-utils
       # code 
       git
       vscode

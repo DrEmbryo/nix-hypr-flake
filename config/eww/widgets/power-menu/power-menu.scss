@@ -1,0 +1,30 @@
+@import "../../colors.scss";
+
+
+.power-menu{
+    min-height: 0px;
+    background-color: transparent;
+}
+
+.power-menu_container {
+    border: 1px solid $purple-primary;
+    border-radius: 5px;
+    background: $purple-secondary;
+}
+
+.power-menu_item {
+    padding: 8px 12px;
+    font-size: 24px;
+    background: $purple-secondary;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+.power-menu_item_inactive{
+    color: $purple-primary;
+}
+
+.power-menu_item_active {
+    color: white;
+}

@@ -1,80 +1,93 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
-    "height": 30, // Waybar height
-    // Choose the order of the modules
-    "modules-left": ["custom/logo", "hyprland/workspaces", "hyprland/window" ],
-    "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "hyprland/language" , "clock"],
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "format": "<sub>{icon}</sub>",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-          "*": 5,
-          "HDMI-A-1": 3 // but only three on HDMI-A-1
-        }
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar at the bottom of your screen
+  "height": 30, // Waybar height
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/logo",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "hyprland/language",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "<sub>{icon}</sub>",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%D %H:%M}  ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "on-click-right": "mode",
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    }
-    },
-    "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "󰌘",
-        "format-disconnected": "Disconnected 󰌙",
-	"tooltip-format-ethernet": "{ipaddr}/{cidr}/{ifname} ",
-    },
-    "pulseaudio": {
-        //"scroll-step": 1,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "hyprland/window": {
-      "format": "󰄾 {title}",
-      "separate-outputs": true
-    },
-    "hyprland/language": {
-      "format": " {}",
-      "format-en": "Eng"
-    },
-    "custom/logo": {
-      "format": "  ",
-      "tooltip": false
+    "persistent-workspaces": {
+      "*": 5,
+      "HDMI-A-1": 3 // but only three on HDMI-A-1
     }
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%D %H:%M}  ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "network": {
+    // "interface": "wlp2s0", // (Optional) To force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "󰌘",
+    "format-disconnected": "Disconnected 󰌙",
+    "tooltip-format-ethernet": "{ipaddr}/{cidr}/{ifname} ",
+  },
+  "pulseaudio": {
+    //"scroll-step": 1,
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "hyprland/window": {
+    "format": "󰄾 {title}",
+    "separate-outputs": true
+  },
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "Eng"
+  },
+  "custom/logo": {
+    "format": "  ",
+    "on-click": "eww open power-menu --toggle",
+    "tooltip": false
+  }
 }

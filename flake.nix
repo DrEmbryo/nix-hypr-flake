@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, hyprland }:
+  outputs = { self, nixpkgs, hyprland, ... }:
   let
     lib = nixpkgs.lib;
     user = "drembryo";
@@ -19,7 +19,7 @@
       ${user} = lib.nixosSystem {
         inherit system;
         modules = [ 
-         ./modules/configuration.nix
+        ./modules/configuration.nix
 	      hyprland.nixosModules.default
 	      {
           programs.hyprland.enable = true;
