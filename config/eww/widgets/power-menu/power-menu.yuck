@@ -4,52 +4,55 @@
     :monitor 0
     :geometry ( geometry :x "6px" :y "6px" :anchor "top left")
     :stacking "overlay"
-        (box :orientation "v" :class "power-menu_container" :spacing "3"
-            (box :orientation "h" 
-            (eventbox 
-                :onhover "eww update power_menu_hovered_item=0"
-                :onhoverlost "eww update power_menu_hovered_item=-1"
-                :timeout "1ms"
-                (button 
-                    :class "power-menu_item" 
-                    :onclick "sh ~/.config/eww/widgets/power-menu/scripts/shutdown.sh" 
-                        (box 
-                            :class {power_menu_hovered_item  == 0 ? "power-menu_item_active" : "power-menu_item_inactive"} 
-                            "󰐥"
-                        )
+    (power-menu-widget)
+    )
+    
+(defwidget power-menu-widget []
+    (box :orientation "v" :class "power-menu_container" :spacing "3"
+        (box :orientation "h" 
+        (eventbox 
+            :onhover "{eww} update power_menu_hovered_item=0"
+            :onhoverlost "{eww} update power_menu_hovered_item=-1"
+            :timeout "1ms"
+            (button 
+                :class "power-menu_item" 
+                :onclick "sh ~/.config/eww/widgets/power-menu/scripts/shutdown.sh" 
+                    (box 
+                        :class {power_menu_hovered_item  == 0 ? "power-menu_item_active" : "power-menu_item_inactive"} 
+                        "󰐥"
                     )
                 )
             )
-            (box :orientation "h" 
-            (eventbox 
-                :onhover "eww update power_menu_hovered_item=1"
-                :onhoverlost "eww update power_menu_hovered_item=-1"
-                :timeout "1ms"
-                (button 
-                    :class "power-menu_item" 
-                    :onclick "sh ~/.config/eww/widgets/power-menu/scripts/shutdown.sh" 
-                        (box 
-                            :class {power_menu_hovered_item  == 1 ? "power-menu_item_active" : "power-menu_item_inactive"} 
-                            "󰜉"
-                        )
+        )
+        (box :orientation "h" 
+        (eventbox 
+            :onhover "{eww} update power_menu_hovered_item=1"
+            :onhoverlost "{eww} update power_menu_hovered_item=-1"
+            :timeout "1ms"
+            (button 
+                :class "power-menu_item" 
+                :onclick "sh ~/.config/eww/widgets/power-menu/scripts/reboot.sh" 
+                    (box 
+                        :class {power_menu_hovered_item  == 1 ? "power-menu_item_active" : "power-menu_item_inactive"} 
+                        "󰜉"
                     )
                 )
             )
-            (box :orientation "h" 
-            (eventbox 
-                :onhover "eww update power_menu_hovered_item=2"
-                :onhoverlost "eww update power_menu_hovered_item=-1"
-                :timeout "1ms"
-                (button 
-                    :class "power-menu_item" 
-                    :onclick "sh ~/.config/eww/widgets/power-menu/scripts/shutdown.sh" 
-                        (box 
-                            :class {power_menu_hovered_item  == 2 ? "power-menu_item_active" : "power-menu_item_inactive"} 
-                            "󰤄"
-                        )
+        )
+        (box :orientation "h" 
+        (eventbox 
+            :onhover "{eww} update power_menu_hovered_item=2"
+            :onhoverlost "{eww} update power_menu_hovered_item=-1"
+            :timeout "1ms"
+            (button 
+                :class "power-menu_item" 
+                :onclick "sh ~/.config/eww/widgets/power-menu/scripts/sleep.sh" 
+                    (box 
+                        :class {power_menu_hovered_item  == 2 ? "power-menu_item_active" : "power-menu_item_inactive"} 
+                        "󰤄"
                     )
                 )
             )
         )
     )
-  
+)
