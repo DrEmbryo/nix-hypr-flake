@@ -6,13 +6,13 @@
     :stacking "overlay"
     (power-menu-widget)
     )
-    
+  
 (defwidget power-menu-widget []
     (box :orientation "v" :class "power-menu_container" :spacing "3"
         (box :orientation "h" 
         (eventbox 
-            :onhover "{eww} update power_menu_hovered_item=0"
-            :onhoverlost "{eww} update power_menu_hovered_item=-1"
+            :onhover "${EWW_CMD} update power_menu_hovered_item=0"
+            :onhoverlost "${EWW_CMD} update power_menu_hovered_item=-1"
             :timeout "1ms"
             (button 
                 :class "power-menu_item" 
@@ -26,8 +26,8 @@
         )
         (box :orientation "h" 
         (eventbox 
-            :onhover "{eww} update power_menu_hovered_item=1"
-            :onhoverlost "{eww} update power_menu_hovered_item=-1"
+            :onhover "${EWW_CMD} update power_menu_hovered_item=1"
+            :onhoverlost "${EWW_CMD} update power_menu_hovered_item=-1"
             :timeout "1ms"
             (button 
                 :class "power-menu_item" 
@@ -41,8 +41,8 @@
         )
         (box :orientation "h" 
         (eventbox 
-            :onhover "{eww} update power_menu_hovered_item=2"
-            :onhoverlost "{eww} update power_menu_hovered_item=-1"
+            :onhover "${EWW_CMD} update power_menu_hovered_item=2"
+            :onhoverlost "${EWW_CMD} update power_menu_hovered_item=-1"
             :timeout "1ms"
             (button 
                 :class "power-menu_item" 
@@ -50,6 +50,21 @@
                     (box 
                         :class {power_menu_hovered_item  == 2 ? "power-menu_item_active" : "power-menu_item_inactive"} 
                         "󰤄"
+                    )
+                )
+            )
+        )
+        (box :orientation "h" 
+        (eventbox 
+            :onhover "${EWW_CMD} update power_menu_hovered_item=3"
+            :onhoverlost "${EWW_CMD} update power_menu_hovered_item=-1"
+            :timeout "1ms"
+            (button 
+                :class "power-menu_item" 
+                :onclick "loginctl terminate-user $USER" 
+                    (box 
+                        :class {power_menu_hovered_item  == 3 ? "power-menu_item_active" : "power-menu_item_inactive"} 
+                        ""
                     )
                 )
             )

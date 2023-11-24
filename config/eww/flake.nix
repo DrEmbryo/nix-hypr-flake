@@ -29,5 +29,12 @@
         ];
       };
 
+      nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ 
+          eww-wayland 
+          python
+        ];
+    };
   };
 }
