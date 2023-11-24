@@ -38,6 +38,9 @@
       hyprpaper
       # widgets
       eww-wayland
+      dbus
+      libnotify
+      glib
       # media
       pavucontrol
       spotify
@@ -47,10 +50,16 @@
       # code 
       git
       vscode
+      # iso burner
+      bootiso
     ];
   };
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "drembryo";
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-19.1.9"
+  ];
 }
