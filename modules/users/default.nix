@@ -25,6 +25,7 @@
       multimarkdown
       ripgrep
       fd
+      dig
       # file explorer
       xfce.thunar
       catppuccin-papirus-folders
