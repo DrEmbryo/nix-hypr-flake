@@ -16,7 +16,6 @@
       ./i18n
       ./ssh
       ./users
-      
     ];
 
 
@@ -31,5 +30,5 @@
   ];
 
   # system features
-  system.stateVersion = "23.05"; 
+  system.stateVersion = "24.05"; 
 }

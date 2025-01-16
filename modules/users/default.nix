@@ -51,6 +51,7 @@
       # code 
       git
       vscode
+      obsidian
       # iso burner
       bootiso
     ];
@@ -61,6 +62,6 @@
   services.xserver.displayManager.autoLogin.user = "drembryo";
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-19.1.9"
+    "electron-28.0.0"
   ];
 }
